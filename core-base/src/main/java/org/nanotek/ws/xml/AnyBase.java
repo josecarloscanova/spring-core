@@ -9,18 +9,20 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.nanotek.ws.WsBase;
+
 @XmlRootElement(name="root" , namespace="org.nanotek.ws.xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AnyBase {
 
 	@XmlAnyElement
-	List<Artist> xmlMessage = new ArrayList<>();
+	List<WsBase<?>> xmlMessage = new ArrayList<>();
 
-	public List<Artist> getXmlMessage() {
+	public List<WsBase<?>> getXmlMessage() {
 		return Optional.ofNullable(xmlMessage).orElseGet(ArrayList::new);
 	}
 
-	public void setXmlMessage(List<Artist> xmlMessage) {
+	public void setXmlMessage(List<WsBase<?>> xmlMessage) {
 		this.xmlMessage = xmlMessage;
 	}
 

@@ -55,7 +55,7 @@ public class ArtistService implements ApplicationContextAware{
 	public <T extends Base<?>> List<?> processResultPage(Page<T> page)
 	{ 
 			
-			if (page.isLast())
+			if (page.isLastPage())
 				atomicInteger.set(0);
 			else
 				atomicInteger.set(atomicInteger.get() + 1);
